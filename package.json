@@ -2,6 +2,10 @@
   "name": "kiosco",
   "version": "0.1.0",
   "private": true,
+  "author": "Pablo Bagliere <pablo.bagliere2@gmail.com>",
+  "license": "MIT",
+  "main": "public/electron.js",
+  "homepage": "./",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -10,6 +14,7 @@
     "@types/node": "^12.20.19",
     "@types/react": "^17.0.18",
     "@types/react-dom": "^17.0.9",
+    "electron-is-dev": "^2.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -20,7 +25,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron-dev": "concurrently \"SET BROWSER=none && yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "dist": "electron-builder"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +46,26 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.1",
+    "electron": "^13.1.9",
+    "electron-builder": "^22.11.7",
+    "wait-on": "^6.0.0"
+  },
+  "build": {
+    "appId": "com.pablobagliere",
+    "productName": "Kiosco",
+    "target": "NSIS",
+    "files": [
+      "./build/**/*"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false
+    }
   }
 }
