@@ -27,13 +27,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron-dev": "concurrently \"SET BROWSER=none && yarn start\" \"wait-on http://localhost:3000 && electron .\"",
-    "dist": "electron-builder"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "dist": "electron-builder",
+    "prepare": "husky install"
   },
   "browserslist": {
     "production": [
@@ -48,9 +43,20 @@
     ]
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
     "concurrently": "^6.2.1",
     "electron": "^13.1.9",
     "electron-builder": "^22.11.7",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.3.2",
     "wait-on": "^6.0.0"
   },
   "build": {
@@ -67,5 +73,8 @@
       "allowToChangeInstallationDirectory": true,
       "oneClick": false
     }
+  },
+  "lint-staged": {
+    "*.ts": "eslint --cache --fix"
   }
 }
