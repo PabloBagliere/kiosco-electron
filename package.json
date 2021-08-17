@@ -28,7 +28,10 @@
     "eject": "react-scripts eject",
     "electron-dev": "concurrently \"SET BROWSER=none && yarn start\" \"wait-on http://localhost:3000 && electron .\"",
     "dist": "electron-builder",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint --cache --fix",
+    "format": "prettier --write .",
+    "test:staged": "SET CI=true && react-scripts test --env=jsdom --findRelatedTests ."
   },
   "browserslist": {
     "production": [
@@ -75,6 +78,6 @@
     }
   },
   "lint-staged": {
-    "*.ts": "eslint --cache --fix"
+    "*.@(ts|tsx)": ["npm run lint", "npm run format", "npm run test:staged"]
   }
 }
