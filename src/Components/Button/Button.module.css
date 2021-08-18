@@ -1,9 +1,11 @@
 .default {
   display: block;
   text-align: center;
-  background-color: blue;
+  padding: .4rem;
+  background-color: var(--primery);
+  cursor: pointer;
 }
 
 .cancel {
-  background-color: red;
+  background-color: var(--red);
 }
