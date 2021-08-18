@@ -1,0 +1,9 @@
+.default {
+  display: block;
+  text-align: center;
+  background-color: blue;
+}
+
+.cancel {
+  background-color: red;
+}

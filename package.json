@@ -9,7 +9,6 @@
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
     "@types/jest": "^26.0.24",
     "@types/node": "^12.20.19",
     "@types/react": "^17.0.18",
@@ -46,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/user-event": "^12.8.3",
     "@typescript-eslint/eslint-plugin": "^4.29.2",
     "@typescript-eslint/parser": "^4.29.2",
     "concurrently": "^6.2.1",
@@ -78,6 +78,10 @@
     }
   },
   "lint-staged": {
-    "*.@(ts|tsx)": ["npm run lint", "npm run format", "npm run test:staged"]
+    "*.@(ts|tsx)": [
+      "npm run lint",
+      "npm run format",
+      "npm run test:staged"
+    ]
   }
 }
