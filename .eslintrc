@@ -20,9 +20,11 @@
     "plugin:prettier/recommended",
     "plugin:react-hooks/recommended",
     "react-app",
-    "react-app/jest"
+    "react-app/jest",
+    "plugin:jest/recommended",
+    "plugin:jest/style"
   ],
-  "plugins": ["react", "@typescript-eslint", "prettier", "import"],
+  "plugins": ["react", "@typescript-eslint", "prettier", "jest" , "import"],
   "rules": {
     "no-console": "warn",
     "@typescript-eslint/no-unused-vars": [

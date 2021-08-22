@@ -1,10 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import App from './App';
 
-test('Prueba', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/hola/i);
+test('Render div and class', () => {
+  const { container } = render(<App />);
 
-  expect(linkElement).toBeInTheDocument();
+  const app = container.querySelector('.App');
+
+  expect(app).toBeVisible();
 });
