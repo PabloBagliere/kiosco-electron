@@ -1,6 +1,9 @@
-import React, { MouseEventHandler } from 'react';
+import classNames from 'classnames/bind';
+import { MouseEventHandler, FC } from 'react';
 
 import styles from './Button.module.css';
+
+const cx = classNames.bind(styles);
 
 interface props {
   status?: boolean;
@@ -8,21 +11,11 @@ interface props {
   className?: string;
 }
 
-const Button: React.FC<props> = ({ children, status, Onclick, className }): JSX.Element => {
-  if (className) {
-    return (
-      <button
-        className={styles.default + ' ' + styles[className]}
-        disabled={status}
-        onClick={Onclick}
-      >
-        {children}
-      </button>
-    );
-  }
+const Button: FC<props> = ({ children, status, Onclick, className }): JSX.Element => {
+  const clasName = cx('default', className);
 
   return (
-    <button className={styles.default} disabled={status} onClick={Onclick}>
+    <button className={clasName} disabled={status} onClick={Onclick}>
       {children}
     </button>
   );

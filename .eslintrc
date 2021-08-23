@@ -24,7 +24,7 @@
     "plugin:jest/recommended",
     "plugin:jest/style"
   ],
-  "plugins": ["react", "@typescript-eslint", "prettier", "jest" , "import"],
+  "plugins": ["react", "@typescript-eslint", "prettier", "jest", "import"],
   "rules": {
     "no-console": "warn",
     "@typescript-eslint/no-unused-vars": [

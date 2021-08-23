@@ -1,7 +1,7 @@
 .default {
   display: block;
   text-align: center;
-  padding: .4rem;
+  padding: 0.4rem;
   background-color: var(--primery);
   cursor: pointer;
 }
